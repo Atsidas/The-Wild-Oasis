@@ -136,7 +136,6 @@ Create a `.env.local` file in the root of your project with the following variab
     VITE_SUPABASE_KEY=your-supabase-key
     VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
 
-Replace your-supabase-url and your-supabase-anon-key with your actual Supabase credentials.
 
 ## Usage
 
