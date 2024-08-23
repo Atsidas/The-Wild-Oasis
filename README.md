@@ -75,92 +75,113 @@ To get a local copy up and running, follow these simple steps:
 
 Open http://localhost:5173 with your browser to see the result.
 
-Supabase Setup
+## Supabase Setup
 
 To use Supabase as the backend for this project, set up the same database structure as described in the README for "The Wild Oasis Website" project. Ensure the following tables and storage buckets are configured:
-Tables
 
-    Bookings Table: Stores booking information.
-        id: bigint (Primary Key)
-        created_at: timestamp with time zone
-        startDate: timestamp without time zone
-        endDate: timestamp without time zone
-        numNights: smallint
-        numGuests: smallint
-        cabinPrice: real
-        extrasPrice: real
-        totalPrice: real
-        status: text
-        hasBreakfast: boolean
-        isPaid: boolean
-        observations: text
-        cabinId: bigint (Foreign Key to Cabins)
-        guestId: bigint (Foreign Key to Guests)
-    
-    Cabins Table: Stores information about the available cabins.
-        id: bigint (Primary Key)
-        created_at: timestamp with time zone
-        name: text
-        maxCapacity: smallint
-        regularPrice: smallint
-        discount: smallint
-        description: text
-        image: text (URL or path to the image)
-    
-    Guests Table: Stores information about guests.
-        id: bigint (Primary Key)
-        created_at: timestamp with time zone
-        fullName: text
-        email: text
-        nationalID: text
-        nationality: text
-        countryFlag: text (URL or path to the flag image)
-    
-    Settings Table: Stores application settings related to bookings.
-        id: bigint (Primary Key)
-        created_at: timestamp with time zone
-        minBookingLength: smallint
-        maxBookingLength: smallint
-        maxGuestsPerBooking: smallint
-        breakfastPrice: real
+### Tables
 
-    Storage Buckets
-    
-        avatars: For storing user profile pictures.
-        cabin-images: For storing images of the cabins.
+- **Bookings Table**: Stores booking information.
+  - `id`: `bigint` (Primary Key)
+  - `created_at`: `timestamp with time zone`
+  - `startDate`: `timestamp without time zone`
+  - `endDate`: `timestamp without time zone`
+  - `numNights`: `smallint`
+  - `numGuests`: `smallint`
+  - `cabinPrice`: `real`
+  - `extrasPrice`: `real`
+  - `totalPrice`: `real`
+  - `status`: `text`
+  - `hasBreakfast`: `boolean`
+  - `isPaid`: `boolean`
+  - `observations`: `text`
+  - `cabinId`: `bigint` (Foreign Key to Cabins)
+  - `guestId`: `bigint` (Foreign Key to Guests)
 
-Authentication
+- **Cabins Table**: Stores information about the available cabins.
+  - `id`: `bigint` (Primary Key)
+  - `created_at`: `timestamp with time zone`
+  - `name`: `text`
+  - `maxCapacity`: `smallint`
+  - `regularPrice`: `smallint`
+  - `discount`: `smallint`
+  - `description`: `text`
+  - `image`: `text` (URL or path to the image)
 
-    Configure Supabase authentication to handle user sign-in.
+- **Guests Table**: Stores information about guests.
+  - `id`: `bigint` (Primary Key)
+  - `created_at`: `timestamp with time zone`
+  - `fullName`: `text`
+  - `email`: `text`
+  - `nationalID`: `text`
+  - `nationality`: `text`
+  - `countryFlag`: `text` (URL or path to the flag image)
 
-Environment Variables
+- **Settings Table**: Stores application settings related to bookings.
+  - `id`: `bigint` (Primary Key)
+  - `created_at`: `timestamp with time zone`
+  - `minBookingLength`: `smallint`
+  - `maxBookingLength`: `smallint`
+  - `maxGuestsPerBooking`: `smallint`
+  - `breakfastPrice`: `real`
 
-  Create a .env.local file in the root of your project with the following variables:
+### Storage Buckets
 
-    ```bash
-    VITE_SUPABASE_URL=your-supabase-url
-    VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+- **avatars**: For storing user profile pictures.
+- **cabin-images**: For storing images of the cabins.
 
-  Replace your-supabase-url and your-supabase-anon-key with your actual Supabase credentials.
+### Authentication
 
-Usage
+- Configure Supabase authentication to handle user sign-in.
 
-    Dashboard: View hotel stats, sales data, and occupancy rates. Use the filters to adjust the date range for insights.
-    Manage Bookings: Navigate to the Bookings page to manage reservations. Use filters and sorting options to find specific bookings.
-    Manage Cabins: Go to the Cabins page to view, edit, or add new cabins. Use filters to find cabins by discount status or sort by various attributes.
-    User Management: Only accessible to authorized users. Allows for creating new user accounts.
-    Hotel Settings: Update booking rules and pricing. Choose between dark and light themes for the application interface.
+### Environment Variables
 
-Technologies Used
+Create a `.env.local` file in the root of your project with the following variables:
 
-    React: A JavaScript library for building user interfaces.
-    Vite: A fast build tool for development.
-    React Query: For data fetching, caching, and synchronization.
-    React Router: For client-side routing.
-    Styled Components: For styling React components using CSS-in-JS.
-    React Hot Toast: For notifications and alerts.
-    React Query Devtools: For debugging and inspecting React Query.
-    Recharts: For building charts and visualizations.
-    date-fns: For date manipulation and formatting.
-    React Error Boundary: For error handling in React components.
-    Supabase: Provides backend services such as database and authentication.
+```bash
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+
+Replace your-supabase-url and your-supabase-anon-key with your actual Supabase credentials.
+
+## Usage
+
+- **Dashboard**: 
+  - View hotel stats, sales data, and occupancy rates.
+  - Use filters to adjust the date range for insights (Last 7 days, Last 30 days, Last 90 days).
+
+- **Manage Bookings**: 
+  - Navigate to the Bookings page to manage reservations.
+  - Use filters to view bookings by status (all, checked out, checked in, unconfirmed).
+  - Sort bookings by date or amount.
+  - View booking details, check-in, check-out, or delete bookings.
+
+- **Manage Cabins**: 
+  - Go to the Cabins page to view, edit, or add new cabins.
+  - Use filters to view cabins (all, no discount, with discount).
+  - Sort cabins by name, price, or capacity.
+  - Add new cabins, edit existing ones, delete, or duplicate cabins.
+
+- **User Management**: 
+  - Accessible only to authorized users.
+  - Create new user accounts for hotel staff.
+
+- **Hotel Settings**: 
+  - Update booking rules and pricing.
+  - Adjust minimum and maximum nights per booking.
+  - Update maximum guests per booking and breakfast price.
+  - Choose between dark and light themes for the application interface.
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A fast build tool for development.
+- **React Query**: For data fetching, caching, and synchronization.
+- **React Router**: For client-side routing.
+- **Styled Components**: For styling React components using CSS-in-JS.
+- **React Hot Toast**: For notifications and alerts.
+- **React Query Devtools**: For debugging and inspecting React Query.
+- **Recharts**: For building charts and visualizations.
+- **date-fns**: For date manipulation and formatting.
+- **React Error Boundary**: For error handling in React components.
+- **Supabase**: Provides backend services such as database and authentication.
