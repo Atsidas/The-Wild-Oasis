@@ -137,10 +137,10 @@ To use Supabase as the backend for this project, set up the same database struct
 ### Environment Variables
 
 Create a `.env.local` file in the root of your project with the following variables:
-
-```bash
-VITE_SUPABASE_URL=your-supabase-url
-VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+  
+    ```bash
+    VITE_SUPABASE_URL=your-supabase-url
+    VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
 
 Replace your-supabase-url and your-supabase-anon-key with your actual Supabase credentials.
 
