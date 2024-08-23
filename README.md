@@ -77,8 +77,6 @@ Open http://localhost:5173 with your browser to see the result.
 
 ## Supabase Setup
 
-To use Supabase as the backend for this project, set up the same database structure as described in the README for "The Wild Oasis Website" project. Ensure the following tables and storage buckets are configured:
-
 ### Tables
 
 - **Bookings Table**: Stores booking information.
