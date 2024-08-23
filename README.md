@@ -133,7 +133,7 @@ Open http://localhost:5173 with your browser to see the result.
 
 Create a `.env.local` file in the root of your project with the following variables:
   
-    VITE_SUPABASE_URL=your-supabase-url
+    VITE_SUPABASE_KEY=your-supabase-key
     VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
 
 Replace your-supabase-url and your-supabase-anon-key with your actual Supabase credentials.
