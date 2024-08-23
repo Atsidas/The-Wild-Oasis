@@ -16,9 +16,6 @@ Check out the live demo: [The Wild Oasis](https://wild-oasis-by-antonis.netlify.
 - [Supabase Setup](#supabase-setup)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 
