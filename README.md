@@ -8,6 +8,13 @@ The Wild Oasis is a sophisticated web application designed for hotel staff to ma
 
 Check out the live demo: [The Wild Oasis](https://wild-oasis-by-antonis.netlify.app)
 
+> **🔑 Test Credentials**
+> 
+> | Field    | Value                      |
+> |----------|----------------------------|
+> | Email    | doyeg64422@ndiety.com      |
+> | Password | ^RV$?,^35b_c-~$            |
+
 ## Table of Contents
 
 - [Features](#features)
